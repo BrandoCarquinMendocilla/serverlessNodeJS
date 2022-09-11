@@ -1,0 +1,21 @@
+{
+  "name": "serverless-nodejs-swagger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "serverless offline start --port 3000 --stage dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serverless-offline": "6.5.0",
+    "serverless-auto-swagger": "1.2.1"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "mysql2": "^2.2.5"
+  }
+}

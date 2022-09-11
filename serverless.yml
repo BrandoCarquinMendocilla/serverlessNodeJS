@@ -1,0 +1,41 @@
+service: serverless-nodejs-swagger
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+
+functions:
+  hello:
+    handler: src/routes/index.hello
+    events:
+      - http: 
+          path: /hello
+          method: get
+  buscarPlanetas:
+    handler: src/routes/index.detallePlaneta
+    events:
+      - http:
+          path: /buscar/planetas
+          method: post
+  mostrarPersonaje:
+    handler: src/routes/index.mostrarPersonaje
+    events:
+      - http:
+          path: /mostrar/personajes
+          method: get
+  registrarPersonaje:
+    handler: src/routes/index.registrarPersonaje
+    events:
+      - http:
+          path: /registrar/personaje
+          method: post
+plugins:
+  - serverless-offline
+  - serverless-auto-swagger
+
+custom:
+    autoswagger:
+        generateSwaggerOnDeploy: false
